@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "scripts": {
+    "start": "ts-node src/app.ts"
   }
 }
