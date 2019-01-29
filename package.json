@@ -4,8 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@aws-cdk/aws-ec2": "^0.22.0",
+    "@aws-cdk/aws-ecs": "^0.22.0",
+    "@aws-cdk/cdk": "^0.22.0",
     "@types/express": "^4.16.1",
     "@types/node": "^10.12.19",
+    "aws-cdk": "^0.22.0",
     "ts-node": "^8.0.2",
     "typescript": "^3.2.4"
   },
@@ -13,6 +17,8 @@
     "express": "^4.16.4"
   },
   "scripts": {
-    "start": "ts-node src/app.ts"
+    "start": "ts-node src/app.ts",
+    "cdk:compile": "yarn tsc --outDir bin lib/*",
+    "cdk:watch": "yarn cdk:compile -w"
   }
 }
