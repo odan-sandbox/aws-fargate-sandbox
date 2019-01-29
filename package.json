@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "ts-node src/app.ts",
-    "cdk:compile": "yarn tsc --outDir bin lib/*",
+    "cdk:compile": "yarn tsc -p tsconfig.json",
     "cdk:watch": "yarn cdk:compile -w"
   }
 }

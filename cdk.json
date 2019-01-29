@@ -1,0 +1,10 @@
+{
+  "app": "node bin/index.js",
+  "context": {
+    "availability-zones:account=330815285612:region=ap-northeast-1": [
+      "ap-northeast-1a",
+      "ap-northeast-1c",
+      "ap-northeast-1d"
+    ]
+  }
+}

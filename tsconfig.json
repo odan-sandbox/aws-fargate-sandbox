@@ -14,7 +14,13 @@
     "forceConsistentCasingInFileNames": true,
     "skipDefaultLibCheck": true,
     "experimentalDecorators": true,
-    "pretty": true
+    "pretty": true,
+    "outDir": "bin"
   },
-  "include": []
+  "include": [
+    "./lib"
+  ],
+  "exclude": [
+    "./node_modules/"
+  ]
 }
