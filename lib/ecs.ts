@@ -16,10 +16,10 @@ export class ContainerEnvStack extends cdk.Stack {
 
     new ecs.LoadBalancedFargateService(this, 'MyFargateService', {
       cluster: cluster,  // Required
-      cpu: '256', // Default is 256
-      desiredCount: 3,  // Default is 1
+      cpu: '512', // Default is 256
+      desiredCount: 6,  // Default is 1
       image: ecs.ContainerImage.fromDockerHub('amazon/amazon-ecs-sample'), // Required
-      memoryMiB: '256',  // Default is 512
+      memoryMiB: '2048',  // Default is 512
       publicLoadBalancer: true  // Default is false
     });
   }
