@@ -5,6 +5,8 @@ export class ContainerRegistryStack extends cdk.Stack {
   constructor(parent: cdk.App, id: string, props?: cdk.StackProps) {
     super(parent, id, props);
 
-    new ecr.Repository(this, "aws-fargate-sandbox")
+    new ecr.Repository(this, "container-registry", {
+      repositoryName: "aws-fargate-sandbox"
+    })
   }
 }
