@@ -6,20 +6,20 @@ export class ContainerEnvStack extends cdk.Stack {
   constructor(parent: cdk.App, id: string, props?: cdk.StackProps) {
     super(parent, id, props);
 
-    const vpc = new ec2.VpcNetwork(this, 'MyVpc', {
-      maxAZs: 3 // Default is all AZs in region
+    const vpc = new ec2.VpcNetwork(this, 'Vpc', {
+      maxAZs: 2
     });
 
-    const cluster = new ecs.Cluster(this, 'MyCluster', {
+    const cluster = new ecs.Cluster(this, 'Cluster', {
+      clusterName: "aws-fargate-sandbox-cluster",
       vpc: vpc
     });
 
     new ecs.LoadBalancedFargateService(this, 'MyFargateService', {
+      containerPort: 3000,
+      desiredCount: 2,
       cluster: cluster,  // Required
-      cpu: '512', // Default is 256
-      desiredCount: 6,  // Default is 1
-      image: ecs.ContainerImage.fromDockerHub('amazon/amazon-ecs-sample'), // Required
-      memoryMiB: '2048',  // Default is 512
+      image: ecs.ContainerImage.fromDockerHub('odanado/aws-fargate-sandbox'), // Required
       publicLoadBalancer: true  // Default is false
     });
   }
