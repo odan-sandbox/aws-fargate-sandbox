@@ -471,7 +471,7 @@ aws-cdk@^0.22.0:
     yaml "^1.1.0"
     yargs "^9.0.1"
 
-aws-sdk@^2.259.1:
+aws-sdk@^2.259.1, aws-sdk@^2.395.0:
   version "2.395.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.395.0.tgz#637e5fa06d69bfb923b17bde24a8bd2a74dedab3"
   dependencies:
