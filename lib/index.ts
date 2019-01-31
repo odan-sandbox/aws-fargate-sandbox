@@ -3,9 +3,11 @@ import * as cdk from'@aws-cdk/cdk';
 import { ContainerEnvStack } from "./ecs"
 import { ContainerRegistryStack } from "./ecr"
 
+
 const app = new cdk.App()
 
-new ContainerEnvStack(app, "container-env")
-new ContainerRegistryStack(app, "container-registry")
+const containerRegistryStack = new ContainerRegistryStack(app, "ContainerRegistryStack")
+
+new ContainerEnvStack(app, "ContainerEnvStack", containerRegistryStack.repositoryProps)
 
 app.run();
